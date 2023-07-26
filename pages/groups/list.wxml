@@ -5,11 +5,16 @@
 * -->
 <view class="page" data-weui-theme="{{ theme }}">
     <!-- 小组列表 -->
-    <view class="weui-media-box weui-media-box_small-appmsg">
-        <view class="weui-cells">
-            <group wx:for="{{ groups }}" wx:for-item="group" wx:key="gid" group="{{ group }}"></group>
-        </view>
-    </view>
+    <block wx:for="{{ groups }}" wx:for-item="group" wx:key="gid">
+        <t-cell 
+            title="{{ group.gname }}"
+            note="{{ group.postCount }}"
+            description="{{ group.description }}"
+            image="{{ group.cover }}"
+            url="{{ '/pages/groups/detail?gid=' + group.gid }}"
+            align="top"
+            hover arrow />
+    </block>
 
     <!-- 加载动效 -->
     <loading status="{{ loadingStatus }}" tipType="{{ loadingTipType }}"></loading>
