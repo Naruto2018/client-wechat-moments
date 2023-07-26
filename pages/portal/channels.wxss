@@ -3,3 +3,11 @@
  * Copyright 2021-Present 唐杰
  * Licensed under the Apache-2.0 license
  */
+.t-cell-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.t-icon-backtop-rectangle {
+  color: #F40;
+}
