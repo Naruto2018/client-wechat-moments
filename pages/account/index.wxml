@@ -42,13 +42,6 @@
     </view>
 
     <view class="weui-cells weui-cells_after-title">
-        <navigator url="/pages/search/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__bd">{{ fresnsConfig.menu_search }}</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        </navigator>
-    </view>
-
-    <view class="weui-cells weui-cells_after-title">
         <navigator url="/pages/editor/index?type=post" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">{{ fresnsConfig.publish_post_name }}</view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>

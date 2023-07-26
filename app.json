@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/posts/index",
+
     "pages/portal/index",
     "pages/portal/about",
     "pages/portal/policies",
+    "pages/portal/channels",
 
     "pages/users/index",
     "pages/users/list",
@@ -27,7 +30,6 @@
     "pages/hashtags/blocking",
     "pages/hashtags/detail",
 
-    "pages/posts/index",
     "pages/posts/list",
     "pages/posts/nearby",
     "pages/posts/location",
@@ -113,7 +115,7 @@
     "navigationBarTextStyle": "@navTxtStyle"
   },
   "style": "v2",
-  "darkmode": true,
+  "darkmode": false,
   "lazyCodeLoading": "requiredComponents",
   "themeLocation": "theme.json",
   "sitemapLocation": "sitemap.json",

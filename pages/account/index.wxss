@@ -9,6 +9,7 @@
 
 .profile-header {
   background-color: var(--weui-BG-2);
+  padding-top: 1px;
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
