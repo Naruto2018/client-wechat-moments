@@ -2,10 +2,9 @@
   "navigationBarTitleText": "小组主页",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "mp-vtabs": "@miniprogram-component-plus/vtabs",
-    "mp-vtabs-content": "@miniprogram-component-plus/vtabs-content",
-    "tabbar": "/components/commons/tabbar/tabbar",
-    "loading": "/components/commons/loading/loading",
-    "group": "/components/group/group"
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "tabbar": "/components/commons/tabbar/tabbar"
   }
 }
