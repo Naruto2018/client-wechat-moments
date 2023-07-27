@@ -58,13 +58,8 @@ Component({
       });
 
       if (globalInfo.userLogin) {
-        let unreadNotifications = 0;
-        let unreadMessages = 0;
-
-        const unreadNotificationsArr = await fresnsUserPanel('unreadNotifications');
-
-        unreadNotifications = Object.values(unreadNotificationsArr).reduce((a, b) => a + b);
-        unreadMessages = await fresnsUserPanel('conversations.unreadMessages');
+        const unreadNotifications = await fresnsUserPanel('unreadNotifications.all');
+        const unreadMessages = await fresnsUserPanel('conversations.unreadMessages');
 
         const count = unreadNotifications + unreadMessages;
 

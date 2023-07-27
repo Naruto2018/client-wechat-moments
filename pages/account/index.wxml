@@ -32,10 +32,10 @@
         <view class="user-bio" wx-if="{{ fresnsUser.bio }}">{{ fresnsUser.bio }}</view>
         <view class="weui-media-box__info">
             <view class="weui-media-box__info__meta">
-                {{ fresnsUser.stats.followUserCount }} {{ fresnsLang.userFollowing }}
+                <navigator url="/pages/profile/following/users?fsid={{ fresnsUser.fsid }}" style="color: var(--weui-LINK);">{{ fresnsUser.stats.followUserCount }} {{ fresnsLang.userFollowing }}</navigator>
             </view>
             <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
-                {{ fresnsUser.stats.followMeCount }} {{ fresnsConfig.user_follower_name }}
+                <navigator url="/pages/profile/interactions/followers?fsid={{ fresnsUser.fsid }}" style="color: var(--weui-LINK);">{{ fresnsUser.stats.followMeCount }} {{ fresnsConfig.user_follower_name }}</navigator>
             </view>
         </view>
     </view>
@@ -47,18 +47,50 @@
         </navigator>
     </view>
 
+    <!-- 通知和私信 -->
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/notifications/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">{{ fresnsConfig.menu_notifications }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+				<text class="weui-badge" wx:if="{{ fresnsUserPanel.unreadNotifications.all > 0 }}">{{ fresnsUserPanel.unreadNotifications.all }}</text>
+            </view>
+        </navigator>
+        <navigator url="/pages/messages/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">{{ fresnsConfig.menu_conversations }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+				<text class="weui-badge" wx:if="{{ fresnsUserPanel.conversations.unreadMessages > 0 }}">{{ fresnsUserPanel.conversations.unreadMessages }}</text>
+            </view>
+        </navigator>
+    </view>
+
+    <!-- 积分和钱包 -->
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">{{ fresnsLang.userExtcredits }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/account/wallet" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">{{ fresnsConfig.menu_account_wallet }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">{{ fresnsAccount.wallet.currencyCode }} {{ fresnsAccount.wallet.balance }} {{ fresnsAccount.wallet.currencyUnit }}</view>
+        </navigator>
+    </view>
+
     <view class="weui-cells weui-cells_after-title">
         <navigator url="/pages/editor/index?type=post" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">{{ fresnsConfig.publish_post_name }}</view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
-        <navigator url="/pages/account/wallet" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__bd">{{ fresnsConfig.menu_account_wallet }}</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access">{{ account.wallet.balance }}</view>
-        </navigator>
         <navigator url="/pages/editor/draft-box?type=post" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">{{ fresnsConfig.menu_editor_drafts }}</view>
             <view class="weui-cell__ft weui-cell__ft_in-access">{{ fresnsUserPanel.draftCount.posts }}</view>
+        </navigator>
+        <navigator url="/pages/posts/following" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">{{ fresnsConfig.menu_follow_posts }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/posts/blocking" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">{{ fresnsConfig.menu_block_users }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
     </view>
 
