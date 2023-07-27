@@ -67,8 +67,7 @@ Page({
 
     if (this.data.menuGroupType === 'tree') {
       const resultRes = await fresnsApi.group.groupTree({
-        whitelistKeys:
-          'gid,url,type,gname,description,cover,postCount',
+        whitelistKeys: 'gid,url,type,gname,description,cover,postCount',
       });
 
       if (resultRes.code === 0) {
