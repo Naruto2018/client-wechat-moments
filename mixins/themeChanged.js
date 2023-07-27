@@ -13,14 +13,14 @@ module.exports = {
 
   /** 监听页面加载 **/
   onLoad() {
-    const app = getApp();
-    this.themeChanged(globalInfo.theme);
-    app.watchThemeChange(this.themeChanged);
+    // const app = getApp();
+    // this.themeChanged(globalInfo.theme);
+    // app.watchThemeChange(this.themeChanged);
   },
 
   /** 监听页面退出 **/
   onUnload() {
-    getApp().unWatchThemeChange(this.themeChanged);
+    // getApp().unWatchThemeChange(this.themeChanged);
   },
 
   /** 主题变更 **/
