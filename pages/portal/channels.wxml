@@ -4,6 +4,12 @@
     Licensed under the Apache-2.0 license
 * -->
 <view class="page" data-weui-theme="{{ theme }}">
+    <t-navbar title="{{ title }}">
+        <view slot="left">
+            <t-image t-class="custom-image" src="{{ logo }}" aria-label="Fresns" />
+        </view>
+    </t-navbar>
+
     <t-cell-group theme="card" wx:if="{{ stickyPosts.length > 0 }}" style="margin-top:20px;margin-bottom:20px;">
         <block wx:for="{{ stickyPosts }}" wx:for-item="post">
             <t-cell title="{{ post.title || post.shortContent }}" leftIcon="backtop-rectangle" url="/pages/posts/detail?pid={{ post.pid }}" hover/>
@@ -20,7 +26,9 @@
 
     <t-cell-group wx:if="{{ channels.length > 0 }}" style="margin-top:20px;">
         <block wx:for="{{ channels }}" wx:for-item="channel">
-            <t-cell title="{{ channel.name }}" image="{{ channel.icon }}" url="/pages/webview" data-type="portal" data-scene="fresnsChannel" data-post-message-key="fresnsChannel" bind:tap="fresnsExtensions" hover arrow/>
+            <t-cell title="{{ channel.name }}" image="{{ channel.icon }}" url="/pages/webview" data-type="portal" data-scene="fresnsChannel" data-post-message-key="fresnsChannel" bind:tap="fresnsExtensions" hover arrow>
+                <t-badge wx:if="{{ channel.badgeType }}" count="{{ channel.badgeValue }}" slot="note" />
+            </t-cell>
         </block>
     </t-cell-group>
 

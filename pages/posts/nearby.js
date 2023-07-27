@@ -19,6 +19,7 @@ Page({
   /** 页面的初始数据 **/
   data: {
     title: null,
+    logo: null,
     // 位置
     mapUrl: null,
     mapId: 5,
@@ -54,6 +55,7 @@ Page({
 
     this.setData({
       title: await fresnsConfig('menu_nearby_posts'),
+      logo: await fresnsConfig('site_logo'),
       mapUrl: mapUrl,
       poi: await fresnsLang('location'),
       select: await fresnsLang('select'),

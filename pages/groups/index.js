@@ -19,6 +19,7 @@ Page({
   /** 页面的初始数据 **/
   data: {
     title: null,
+    logo: null,
     menuGroupType: null,
     // 默认查询条件
     requestState: null,
@@ -45,6 +46,7 @@ Page({
 
     this.setData({
       title: await fresnsConfig('menu_group_title'),
+      logo: await fresnsConfig('site_logo'),
       menuGroupType: await fresnsConfig('menu_group_type'),
       requestState: requestState,
       requestQuery: requestQuery,

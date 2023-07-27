@@ -3,6 +3,11 @@
  * Copyright 2021-Present 唐杰
  * Licensed under the Apache-2.0 license
  */
+.custom-image {
+  height: 48rpx;
+  width: 204rpx;
+}
+
 .weui-cell__bd {
   color: var(--weui-FG-0);
 }

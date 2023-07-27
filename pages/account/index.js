@@ -13,6 +13,9 @@ Page({
 
   /** 页面的初始数据 **/
   data: {
+    title: null,
+    logo: null,
+
     accountLogin: false,
     userLogin: false,
 
@@ -58,6 +61,8 @@ Page({
       });
 
     this.setData({
+      title: await fresnsConfig('menu_account'),
+      logo: await fresnsConfig('site_logo'),
       accountLogin: globalInfo.accountLogin,
       userLogin: globalInfo.userLogin,
       fresnsConfig: await fresnsConfig(),

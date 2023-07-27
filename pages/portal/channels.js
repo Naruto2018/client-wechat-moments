@@ -17,6 +17,7 @@ Page({
   /** 页面的初始数据 **/
   data: {
     title: null,
+    logo: null,
     fresnsConfig: null,
 
     // 置顶帖子
@@ -40,7 +41,7 @@ Page({
 
     let stickyPosts = [];
     if (resultRes.code === 0) {
-      resultRes.data.list.forEach(post => {
+      resultRes.data.list.forEach((post) => {
         post.shortContent = post.content.substring(0, 20);
         stickyPosts.push(post);
       });
@@ -56,6 +57,7 @@ Page({
 
     this.setData({
       title: await fresnsLang('discover'),
+      logo: await fresnsConfig('site_logo'),
       fresnsConfig: await fresnsConfig(),
       stickyPosts: stickyPosts,
       channels: channels,

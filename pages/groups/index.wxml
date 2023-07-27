@@ -4,6 +4,12 @@
     Licensed under the Apache-2.0 license
 * -->
 <view class="page" data-weui-theme="{{ theme }}">
+    <t-navbar title="{{ title }}">
+        <view slot="left">
+            <t-image t-class="custom-image" src="{{ logo }}" aria-label="Fresns" />
+        </view>
+    </t-navbar>
+
     <block wx:for="{{ groupTree }}" wx:for-item="tree" wx:key="gid">
         <t-cell-group theme="card" title="{{ tree.gname }}">
             <block wx:for="{{ tree.groups }}" wx:for-item="group" wx:key="gid">

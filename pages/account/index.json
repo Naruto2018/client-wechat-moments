@@ -1,7 +1,11 @@
 {
   "navigationBarTitleText": "我",
   "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "component": true,
   "usingComponents": {
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-image": "tdesign-miniprogram/image/image",
     "mp-actionSheet": "weui-miniprogram/actionsheet/actionsheet",
     "mp-dialog": "weui-miniprogram/dialog/dialog",
     "tabbar": "/components/commons/tabbar/tabbar"
