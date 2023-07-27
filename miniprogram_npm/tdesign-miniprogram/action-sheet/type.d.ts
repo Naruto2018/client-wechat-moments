@@ -48,4 +48,6 @@ export interface ActionSheetItem {
     label: string;
     color?: string;
     disabled?: boolean;
+    icon?: string;
+    suffixIcon?: string;
 }

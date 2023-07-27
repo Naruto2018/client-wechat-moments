@@ -30,11 +30,7 @@ let Indexes = class Indexes extends SuperComponent {
                 type: 'child',
             },
         };
-        this.behaviors = [
-            pageScrollMixin(function (event) {
-                this.onScroll(event);
-            }),
-        ];
+        this.behaviors = [pageScrollMixin()];
         this.timer = null;
         this.groupTop = [];
         this.sidebar = null;
