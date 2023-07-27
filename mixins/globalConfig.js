@@ -12,10 +12,8 @@ module.exports = {
   },
 
   /** 监听页面加载 **/
-  onLoad() {
-  },
+  onLoad() {},
 
   /** 监听页面退出 **/
-  onUnload() {
-  },
+  onUnload() {},
 };
