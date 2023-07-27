@@ -114,9 +114,7 @@
     "navigationBarTitleText": "Fresns",
     "navigationBarTextStyle": "@navTxtStyle"
   },
-  "style": "v2",
   "darkmode": false,
-  "lazyCodeLoading": "requiredComponents",
   "themeLocation": "theme.json",
   "sitemapLocation": "sitemap.json",
   "plugins": {
@@ -130,6 +128,7 @@
       "desc": "你的位置信息可用于编辑器发表带位置的内容和附近页面查询内容。"
     }
   },
+  "lazyCodeLoading": "requiredComponents",
   "useExtendedLib": {
     "weui": true
   }
