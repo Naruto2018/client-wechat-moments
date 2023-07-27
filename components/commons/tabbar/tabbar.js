@@ -20,32 +20,32 @@ Component({
         value: 'posts',
         icon: 'home',
         ariaLabel: '首页',
-        pagePath: '/pages/posts/index'
+        pagePath: '/pages/posts/index',
       },
       {
         value: 'portal',
         icon: 'chart-bubble',
         ariaLabel: '导读',
-        pagePath: '/pages/portal/index'
+        pagePath: '/pages/portal/index',
       },
       {
         value: 'groups',
         icon: 'internet',
         ariaLabel: '社群',
-        pagePath: '/pages/groups/index'
+        pagePath: '/pages/groups/index',
       },
       {
         value: 'channels',
         icon: 'app',
         ariaLabel: '发现',
-        pagePath: '/pages/portal/channels'
+        pagePath: '/pages/portal/channels',
       },
       {
         value: 'account',
         icon: 'user',
         ariaLabel: '我的',
         count: 0,
-        pagePath: '/pages/account/index'
+        pagePath: '/pages/account/index',
       },
     ],
   },
@@ -84,7 +84,7 @@ Component({
   methods: {
     onChange(e) {
       const value = e.detail.value;
-      const item = this.data.list.find(item => item.value === value);
+      const item = this.data.list.find((item) => item.value === value);
 
       this.setData({
         value: value,

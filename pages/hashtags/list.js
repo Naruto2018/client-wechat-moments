@@ -70,7 +70,8 @@ Page({
 
     const resultRes = await fresnsApi.hashtag.hashtagList(
       Object.assign(this.data.requestQuery, {
-        whitelistKeys: 'hid,url,hname,description,cover,likeCount,dislikeCount,followCount,blockCount,postCount,postDigestCount,interaction',
+        whitelistKeys:
+          'hid,url,hname,description,cover,likeCount,dislikeCount,followCount,blockCount,postCount,postDigestCount,interaction',
         page: this.data.page,
       })
     );

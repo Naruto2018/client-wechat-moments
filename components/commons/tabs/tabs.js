@@ -38,7 +38,7 @@ Component({
       this.setData({
         value: value,
       });
-    }
+    },
   },
 
   /** 组件生命周期声明对象 **/
@@ -48,7 +48,7 @@ Component({
         index: await fresnsConfig('menu_post_name'),
         follow: await fresnsConfig('menu_follow_all_posts'),
         nearby: await fresnsConfig('menu_nearby_posts'),
-      }
+      };
 
       this.setData({
         tabs: tabs,
@@ -79,6 +79,6 @@ Component({
       wx.redirectTo({
         url: pagePath,
       });
-    }
+    },
   },
 });
