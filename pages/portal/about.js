@@ -19,8 +19,6 @@ Page({
   onLoad: async function () {
     const fresnsStatus = await fresnsApi.global.globalStatus();
 
-    console.log(fresnsStatus);
-
     this.setData({
       version: fresnsStatus.version || globalInfo.clientVersion,
     });
