@@ -4,7 +4,7 @@
  * Licensed under the Apache-2.0 license
  */
 import { globalInfo } from '../../../utils/fresnsGlobalInfo';
-import { fresnsUserPanel } from '../../../api/tool/function';
+import { fresnsConfig, fresnsUserPanel } from '../../../api/tool/function';
 
 Component({
   /** 组件的属性列表 **/
@@ -23,16 +23,16 @@ Component({
         pagePath: '/pages/posts/index',
       },
       {
-        value: 'portal',
-        icon: 'chart-bubble',
-        ariaLabel: '导读',
-        pagePath: '/pages/portal/index',
-      },
-      {
         value: 'groups',
         icon: 'internet',
         ariaLabel: '社群',
         pagePath: '/pages/groups/index',
+      },
+      {
+        value: 'editor',
+        icon: 'add-rectangle',
+        ariaLabel: '发表',
+        pagePath: '/pages/editor/index?type=post',
       },
       {
         value: 'channels',
@@ -55,6 +55,7 @@ Component({
     attached: async function () {
       this.setData({
         value: this.data.activeLabel,
+        publishPostName: await fresnsConfig('publish_post_name'),
       });
 
       if (globalInfo.userLogin) {
