@@ -30,6 +30,7 @@ Page({
 
     showLogoutDialog: false,
     loginButtons: [],
+    userExtcredits: false,
   },
 
   /** 监听页面加载 **/
@@ -102,6 +103,13 @@ Page({
 
     wx.hideNavigationBarLoading();
     console.log('reload data end');
+  },
+
+  // 展开用户积分
+  onClickExtcredits: function () {
+    this.setData({
+      userExtcredits: !this.data.userExtcredits,
+    });
   },
 
   /** 切换语言菜单 **/

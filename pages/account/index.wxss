@@ -117,3 +117,8 @@
 .weui-footer {
   margin-top: 30px;
 }
+
+.userExtcredits {
+  background-color: var(--weui-BG-1);
+  padding-bottom: 20px;
+}

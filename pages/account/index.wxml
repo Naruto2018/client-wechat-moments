@@ -64,16 +64,25 @@
             </navigator>
         </view>
 
-        <!-- 积分和钱包 -->
-        <view class="weui-cells weui-cells_after-title">
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- 积分 -->
+        <view class="weui-cells weui-cells_after-title {{ userExtcredits ? 'userExtcredits' : '' }}">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bind:tap="onClickExtcredits">
                 <view class="weui-cell__bd">{{ fresnsLang.userExtcredits }}</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                <view wx:if="{{ userExtcredits }}">
+                    <t-icon name="chevron-up" size="24" color="#999999"/>
+                </view>
+                <view wx:else>
+                    <t-icon name="chevron-down" size="24" color="#999999"/>
+                </view>
             </navigator>
-            <navigator url="/pages/account/wallet" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">{{ fresnsConfig.menu_account_wallet }}</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access">{{ fresnsAccount.wallet.currencyCode }} {{ fresnsAccount.wallet.balance }} {{ fresnsAccount.wallet.currencyUnit }}</view>
-            </navigator>
+
+            <t-cell-group theme="card" wx:if="{{ userExtcredits }}">
+                <t-cell wx:if="{{ fresnsUser.stats.extcredits1State != 1 }}" title="{{ fresnsUser.stats.extcredits1Name }}" note="{{ fresnsUser.stats.extcredits1 }} {{ fresnsUser.stats.extcredits1Unit }}" url="/pages/account/user-extcredits?id=1" hover arrow />
+                <t-cell wx:if="{{ fresnsUser.stats.extcredits2State != 1 }}" title="{{ fresnsUser.stats.extcredits2Name }}" note="{{ fresnsUser.stats.extcredits2 }} {{ fresnsUser.stats.extcredits2Unit }}" url="/pages/account/user-extcredits?id=2" hover arrow />
+                <t-cell wx:if="{{ fresnsUser.stats.extcredits3State != 1 }}" title="{{ fresnsUser.stats.extcredits3Name }}" note="{{ fresnsUser.stats.extcredits3 }} {{ fresnsUser.stats.extcredits3Unit }}" url="/pages/account/user-extcredits?id=3" hover arrow />
+                <t-cell wx:if="{{ fresnsUser.stats.extcredits4State != 1 }}" title="{{ fresnsUser.stats.extcredits4Name }}" note="{{ fresnsUser.stats.extcredits4 }} {{ fresnsUser.stats.extcredits4Unit }}" url="/pages/account/user-extcredits?id=4" hover arrow />
+                <t-cell wx:if="{{ fresnsUser.stats.extcredits5State != 1 }}" title="{{ fresnsUser.stats.extcredits5Name }}" note="{{ fresnsUser.stats.extcredits5 }} {{ fresnsUser.stats.extcredits5Unit }}" url="/pages/account/user-extcredits?id=5" hover arrow />
+            </t-cell-group>
         </view>
 
         <!-- 内容 -->
