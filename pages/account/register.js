@@ -43,6 +43,7 @@ Page({
     confirmPassword: '',
 
     // 昵称
+    nicknameName: null,
     nickname: '',
   },
 
@@ -60,6 +61,7 @@ Page({
 
     this.setData({
       fresnsLang: await fresnsLang(),
+      nicknameName: await fresnsConfig('user_nickname_name'),
       countryCodeRange,
       countryCodeIndex: countryCodeRange.indexOf(defaultCode),
     });
