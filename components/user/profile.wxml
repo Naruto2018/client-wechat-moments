@@ -18,7 +18,7 @@
 
         <view class="weui-flex__item profile-btn">
             <interaction user="{{ user }}"></interaction>
-            <view wx:if="{{ actionGroups.length > 0 }}" class="weui-btn weui-btn_mini weui-btn_default" style="margin-top:10px" bind:tap="onClickMore">
+            <view wx:if="{{ actionGroups.length > 0 }}" class="weui-btn weui-btn_mini weui-btn_default" style="margin-left:20px;margin-top:20px" bind:tap="onClickMore">
                 <image class="weui-btn_cell__icon" src="{{ buttonIcons.more }}"></image>
             </view>
         </view>

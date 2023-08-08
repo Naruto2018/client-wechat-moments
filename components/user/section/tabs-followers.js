@@ -4,7 +4,6 @@
  * Licensed under the Apache-2.0 license
  */
 import { fresnsConfig, fresnsLang, fresnsUser } from '../../../api/tool/function';
-import { globalInfo } from '../../../utils/fresnsGlobalInfo';
 
 Component({
   /** 组件的属性列表 **/

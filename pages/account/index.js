@@ -30,6 +30,8 @@ Page({
 
     showLogoutDialog: false,
     loginButtons: [],
+
+    userHomePath: '',
     userExtcredits: false,
   },
 
@@ -81,6 +83,7 @@ Page({
           extClass: 'warn',
         },
       ],
+      userHomePath: await globalInfo.userHomePath(),
     });
   },
 

@@ -4,7 +4,7 @@
     Licensed under the Apache-2.0 license
 * -->
 <t-tabs default-value="{{ defaultValue }}" sticky bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
-  <t-tab-panel label="{{ tabs.followersYouFollow }}" value="followersYouFollow" wx:if="{{ fresnsUser.uid != user.uid }}" />
-  <t-tab-panel label="{{ tabs.followers }}" value="followers" />
-  <t-tab-panel label="{{ tabs.following }}" value="following" />
+    <t-tab-panel label="{{ tabs.followersYouFollow }}" value="followersYouFollow" wx:if="{{ fresnsUser.uid != user.uid }}" />
+    <t-tab-panel label="{{ tabs.followers }}" value="followers" />
+    <t-tab-panel label="{{ tabs.following }}" value="following" />
 </t-tabs>

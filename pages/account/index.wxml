@@ -22,14 +22,16 @@
         <view class="profile-header">
             <view class="weui-flex">
                 <view class="profile-info">
-                    <view class="profile-avatar">
-                        <image wx:if="{{ fresnsUser.decorate }}" src="{{ fresnsUser.decorate }}" class="avatar-decorate" mode="scaleToFill"></image>
-                        <image src="{{ fresnsUser.avatar }}" class="avatar-img" mode="scaleToFill"></image>
-                    </view>
-                    <view class="profile-name">
-                        <text class="profile-nickname">{{ fresnsUser.nickname }}</text>
-                        <text class="profile-username">{{ '@' + fresnsUser.username }}</text>
-                    </view>
+                    <navigator url="{{ userHomePath + fresnsUser.fsid }}">
+                        <view class="profile-avatar">
+                            <image wx:if="{{ fresnsUser.decorate }}" src="{{ fresnsUser.decorate }}" class="avatar-decorate" mode="scaleToFill"></image>
+                            <image src="{{ fresnsUser.avatar }}" class="avatar-img" mode="scaleToFill"></image>
+                        </view>
+                        <view class="profile-name">
+                            <text class="profile-nickname">{{ fresnsUser.nickname }}</text>
+                            <text class="profile-username">{{ '@' + fresnsUser.username }}</text>
+                        </view>
+                    </navigator>
                 </view>
                 <view class="weui-flex__item settings-btn">
                     <navigator url="/pages/account/settings" class="weui-btn weui-btn_mini weui-btn_default">
