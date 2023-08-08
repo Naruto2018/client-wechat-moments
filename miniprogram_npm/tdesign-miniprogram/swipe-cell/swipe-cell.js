@@ -26,12 +26,22 @@ let SwiperCell = class SwiperCell extends SuperComponent {
             closed: true,
             classPrefix: name,
         };
-    }
-    attached() {
-        ARRAY.push(this);
-    }
-    ready() {
-        this.setSwipeWidth();
+        this.observers = {
+            'left, right'() {
+                this.setSwipeWidth();
+            },
+        };
+        this.lifetimes = {
+            attached() {
+                ARRAY.push(this);
+            },
+            ready() {
+                this.setSwipeWidth();
+            },
+            detached() {
+                ARRAY = ARRAY.filter((item) => item !== this);
+            },
+        };
     }
     setSwipeWidth() {
         Promise.all([getRect(this, `${ContainerClass}__left`), getRect(this, `${ContainerClass}__right`)]).then(([leftRect, rightRect]) => {
@@ -40,9 +50,6 @@ let SwiperCell = class SwiperCell extends SuperComponent {
                 rightWidth: rightRect.width,
             });
         });
-    }
-    detached() {
-        ARRAY = ARRAY.filter((item) => item !== this);
     }
     open() {
         this.setData({ opened: true });
