@@ -4,7 +4,7 @@
     Licensed under the Apache-2.0 license
 * -->
 <view class="page" data-weui-theme="{{ theme }}">
-    <t-tabs defaultValue="{{ activeTab }}" value="{{ activeTab }}" sticky="{{ true }}" bind:change="onTabsChange" bind:click="onClickTab" t-class="custom-tabs">
+    <t-tabs default-value="{{ activeTab }}" value="{{ activeTab }}" sticky="{{ true }}" bind:change="onTabsChange" bind:click="onClickTab" t-class="custom-tabs">
         <t-tab-panel wx:for="{{ tabs }}" wx:for-item="tab" wx:for-index="index" label="{{ tab.title }}" value="{{ index }}"/>
     </t-tabs>
 

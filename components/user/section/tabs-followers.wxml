@@ -3,8 +3,8 @@
     Copyright 2021-Present 唐杰
     Licensed under the Apache-2.0 license
 * -->
-<t-tabs defaultValue="{{ value }}" sticky bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
-  <t-tab-panel label="{{ tabs.followers }}" value="0" />
-  <t-tab-panel label="{{ tabs.following }}" value="1" />
-  <t-tab-panel label="{{ tabs.followersYouFollow }}" value="2" wx:if="{{ followersYouFollow }}" />
+<t-tabs default-value="{{ defaultValue }}" sticky bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+  <t-tab-panel label="{{ tabs.followersYouFollow }}" value="followersYouFollow" wx:if="{{ fresnsUser.uid != user.uid }}" />
+  <t-tab-panel label="{{ tabs.followers }}" value="followers" />
+  <t-tab-panel label="{{ tabs.following }}" value="following" />
 </t-tabs>

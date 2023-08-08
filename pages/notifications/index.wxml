@@ -5,7 +5,7 @@
 * -->
 <view class="page" data-weui-theme="{{ theme }}">
     <t-tabs
-        defaultValue="{{ type || 0 }}"
+        default-value="{{ type || 0 }}"
         sticky
         stickyProps="{{stickyProps}}"
         bind:change="onTabsChange"
