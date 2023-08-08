@@ -18,6 +18,9 @@
 
         <view class="weui-flex__item profile-btn">
             <interaction user="{{ user }}"></interaction>
+            <view wx:if="{{ actionGroups.length > 0 }}" class="weui-btn weui-btn_mini weui-btn_default" style="margin-top:10px" bind:tap="onClickMore">
+                <image class="weui-btn_cell__icon" src="{{ buttonIcons.more }}"></image>
+            </view>
         </view>
     </view>
 
@@ -25,14 +28,10 @@
 
     <view class="profile-stats weui-media-box__info">
         <view class="weui-media-box__info__meta">
-            {{ user.stats.followMeCount }} {{ userFollowerName }}
+            <navigator url="/pages/profile/following/users?fsid={{ user.fsid }}" style="color: var(--weui-LINK);">{{ user.stats.followUserCount }} {{ userFollowingName }}</navigator>
         </view>
         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
-            {{ user.stats.followUserCount }} {{ userFollowingName }}
-        </view>
-
-        <view wx:if="{{ actionGroups.length > 0 }}" class="weui-btn weui-btn_mini weui-btn_default" bind:tap="onClickMore">
-            <image class="weui-btn_cell__icon" src="{{ buttonIcons.more }}"></image>
+            <navigator url="/pages/profile/interactions/followers?fsid={{ user.fsid }}" style="color: var(--weui-LINK);">{{ user.stats.followMeCount }} {{ userFollowerName }}</navigator>
         </view>
     </view>
 </view>
