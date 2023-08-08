@@ -15,7 +15,7 @@ const Type = {
 Page({
   /** 外部 mixin 引入 **/
   mixins: [
-    require('../../mixins/globalConfig'), 
+    require('../../mixins/globalConfig'),
     require('../../mixins/loginInterceptor'),
     require('../../mixins/sendVerifyCode'),
   ],
@@ -44,7 +44,7 @@ Page({
       fresnsConfig: await fresnsConfig(),
       fresnsLang: await fresnsLang(),
       fresnsAccount: await fresnsAccount('detail'),
-      account: '+' + await fresnsAccount('detail.countryCode') + ' ' + await fresnsAccount('detail.purePhone'),
+      account: '+' + (await fresnsAccount('detail.countryCode')) + ' ' + (await fresnsAccount('detail.purePhone')),
     });
   },
 

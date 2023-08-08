@@ -647,5 +647,5 @@ Page({
     wx.navigateTo({
       url: '/pages/account/delete-account',
     });
-  }
+  },
 });
