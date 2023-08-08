@@ -5,6 +5,7 @@
  */
 import { fresnsApi } from '../../api/api';
 import { fresnsConfig } from '../../api/tool/function';
+import { globalInfo } from '../../utils/fresnsGlobalInfo';
 
 Page({
   /** 外部 mixin 引入 **/
