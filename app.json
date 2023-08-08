@@ -76,6 +76,7 @@
     "pages/account/reset-password",
     "pages/account/wallet",
     "pages/account/users",
+    "pages/account/user-extcredits",
     "pages/account/settings",
     "pages/account/delete-account",
 
