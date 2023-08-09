@@ -36,11 +36,11 @@
 
                             <text class="profile-username">{{ '@' + fresnsUser.username }}</text>
 
-                            <view wx:if="{{ fresnsUser.roleIconDisplay }}" class="profile-role-icon">
+                            <view wx:if="{{ fresnsUser.roleIcon }}" class="profile-role-icon">
                                 <image src="{{ fresnsUser.roleIcon }}" mode="heightFix"></image>
                             </view>
 
-                            <view wx:if="{{ fresnsUser.roleNameDisplay }}" class="profile-role-name">
+                            <view wx:if="{{ fresnsUser.roleName }}" class="profile-role-name">
                                 <text class="weui-badge">{{ fresnsUser.roleName }}</text>
                             </view>
                         </view>
