@@ -10,6 +10,8 @@
 
 本小程序是基于 [Fresns App for WeChat Mini Program](https://github.com/fresns/wechat) 框架小程序二次定制开发。与网站主题模板 [Moments](https://marketplace.fresns.com/open-source/detail/Moments) 体验一致，因此命名为 **MomentsWeChat**
 
+![MomentsWeChat](https://files.fresns.org/wiki/previews/MomentsWeChat.png)
+
 ## 使用说明
 
 - 1、下载[代码包](https://github.com/fresns/wechat-moments/releases)；
