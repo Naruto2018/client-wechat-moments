@@ -19,9 +19,11 @@
 - 3、将根目录的 `fresns.example.js` 文件名修改为 `fresns.js`，然后根据里面的描述填写你的配置信息（[Fresns 官方社区 API 密钥，对外公开，所有人可以直接使用](https://discuss.fresns.cn/post/RJ35gFtb)）；
 - 4、使用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)上传代码，提交到微信公众平台。
 
+> 附近功能使用的是「[腾讯位置服务地图选点](https://mp.weixin.qq.com/wxopen/plugindevdoc?appid=wx76a9a06e5b4e693e&token=&lang=zh_CN)」插件，请为你的小程序添加该插件，否则会报错。
+
 > 所有频道栏目的命名是读取后台配置，请自行在 Fresns 后台配置，代码中没有写死的名称。
 
-> 附近功能使用的是「[腾讯位置服务地图选点](https://mp.weixin.qq.com/wxopen/plugindevdoc?appid=wx76a9a06e5b4e693e&token=&lang=zh_CN)」插件，请为你的小程序添加该插件，否则会报错。
+> 由于微信的规则要求，需要在后台修改一下语言包内容。[https://discuss.fresns.cn/post/K9ydts1v](https://discuss.fresns.cn/post/K9ydts1v)
 
 ## 许可协议
 
