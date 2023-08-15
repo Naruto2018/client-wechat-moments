@@ -70,7 +70,16 @@
   vertical-align: middle;
 }
 
-.content-text,
+.content-title {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.content-text {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
 .content-brief {
   margin-top: 8px;
 }
