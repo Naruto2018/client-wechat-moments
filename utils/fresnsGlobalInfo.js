@@ -9,7 +9,7 @@ import { fresnsLogin } from './fresnsLogin';
 
 export class GlobalInfo {
   clientName = 'Moments';
-  clientVersion = '1.0.0';
+  clientVersion = '1.0.1';
   theme = null;
 
   // 处理用户主页路径
