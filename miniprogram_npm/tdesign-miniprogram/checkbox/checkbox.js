@@ -58,7 +58,7 @@ let CheckBox = class CheckBox extends SuperComponent {
             },
         ];
         this.methods = {
-            onChange(e) {
+            handleTap(e) {
                 const { disabled, readonly } = this.data;
                 if (disabled || readonly)
                     return;
