@@ -353,8 +353,9 @@ Page({
 
   // 键盘高度发生变化的时候触发
   handleKeyboard: function (e) {
+    const height = e.detail.height || 0;
     this.setData({
-      modifyDialogHeight: e.detail.height + 50,
+      modifyDialogHeight: height + 50,
     });
   },
 
