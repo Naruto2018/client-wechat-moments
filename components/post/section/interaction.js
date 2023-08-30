@@ -179,7 +179,7 @@ Component({
     },
 
     // 评论框隐藏
-    eventCommentBoxHide: function () {
+    onCommentBoxHide: function () {
       this.setData({
         showCommentBox: false,
       });

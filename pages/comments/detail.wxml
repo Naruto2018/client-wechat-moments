@@ -35,11 +35,22 @@
         </view>
     </view>
 
-    <mp-half-screen-dialog show="{{ showCommentBox }}" title="{{ title }}">
-        <view slot="desc">
-            <comment-box pid="{{ comment.replyToPost.pid }}" cid="{{ comment.cid }}" nickname="{{ nickname }}"/>
+    <view wx:if="{{ showCommentBox }}" aria-role="dialog" aria-modal="true" aria-labelledby="js_dialog_title">
+        <view class="weui-mask {{ showCommentBox ? 'weui-animate_fade-in' : 'weui-animate_fade-out'}}" bind:tap="onCommentBoxHide"></view>
+        <view class="weui-half-screen-dialog {{ showCommentBox ? 'weui-animate_slide-up' : 'weui-animate_slide-down'}}">
+            <view class="weui-half-screen-dialog__hd">
+                <view class="weui-half-screen-dialog__hd__side" bind:tap="onCommentBoxHide">
+                    <mp-icon icon="close" size="{{ 24 }}"/>
+                </view>
+                <view class="weui-half-screen-dialog__hd__main">
+                    <strong class="weui-half-screen-dialog__title" id="js_dialog_title">{{ title }}</strong>
+                </view>
+            </view>
+            <view class="weui-half-screen-dialog__bd" style="padding-bottom: 88px;">
+                <comment-box pid="{{ comment.replyToPost.pid }}" cid="{{ comment.cid }}" nickname="{{ nickname }}"/>
+            </view>
         </view>
-    </mp-half-screen-dialog>
+    </view>
 
     <view class="weui-loadmore weui-loadmore_line tabbar-spacing">
         <text class="weui-loadmore__tips">Powered by Fresns</text>

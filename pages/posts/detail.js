@@ -149,4 +149,11 @@ Page({
       showCommentBox: true,
     });
   },
+
+  // 评论框隐藏
+  onCommentBoxHide: function () {
+    this.setData({
+      showCommentBox: false,
+    });
+  },
 });
