@@ -127,7 +127,7 @@
                 <view class="weui-cells weui-cells_form" style="margin-top: 0;">
                     <view class="weui-cell weui-cell_active">
                         <view class="weui-cell__bd">
-                            <input type="nickname" value="{{ modifyDialogValue }}" maxlength="{{ fresnsConfig.nickname_max }}" bindinput="handleInput" bindkeyboardheightchange="handleKeyboard" placeholder="{{ modifyDialogTitle }}" class="weui-input"/>
+                            <input value="{{ modifyDialogValue }}" maxlength="{{ fresnsConfig.nickname_max }}" bindinput="handleInput" bindkeyboardheightchange="handleKeyboard" placeholder="{{ modifyDialogTitle }}" class="weui-input"/>
                         </view>
                     </view>
                 </view>
