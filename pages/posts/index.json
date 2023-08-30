@@ -6,7 +6,6 @@
   "usingComponents": {
     "t-navbar": "tdesign-miniprogram/navbar/navbar",
     "t-image": "tdesign-miniprogram/image/image",
-    "t-fab": "tdesign-miniprogram/fab/fab",
     "tabs": "/components/commons/tabs/tabs",
     "tabbar": "/components/commons/tabbar/tabbar",
     "loading": "/components/commons/loading/loading",

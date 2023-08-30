@@ -24,9 +24,6 @@
         <text class="weui-loadmore__tips">Powered by Fresns</text>
     </view>
 
-    <!-- 发表按钮 -->
-    <!-- <t-fab icon="add" bind:click="handleClick" aria-label="发表" style="bottom:110px;"></t-fab> -->
-
     <!-- Tabbar -->
     <tabbar activeLabel="posts"></tabbar>
 </view>
