@@ -643,6 +643,34 @@ Page({
     }
   },
 
+  // 绑定微信小程序
+  onConnectWeChatMiniApp: async function (e) {
+    wx.login({
+      success: async (res) => {
+        let wechatCode = res.code;
+        console.log('WeChat Code', wechatCode);
+
+        if (wechatCode) {
+          const loginRes = await fresnsApi.wechatLogin.oauth({
+            code: wechatCode,
+          });
+
+          if (loginRes.code === 0) {
+            this.reloadFresnsAccount();
+          }
+
+          console.log('onConnectWeChatMiniApp', loginRes);
+        } else {
+          wx.showToast({
+            title: '[10001] ' + res.errMsg,
+            icon: 'none',
+            duration: 2000,
+          });
+        }
+      },
+    });
+  },
+
   // 申请注销账号
   accountDelete() {
     wx.navigateTo({

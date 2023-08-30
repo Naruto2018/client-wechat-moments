@@ -88,15 +88,20 @@
     <!-- 互联信息 -->
     <mp-cells ext-class="setting-cells" wx:if="{{ fresnsAccount.connects }}" title="{{ fresnsLang.settingConnect }}">
         <block wx:for="{{ fresnsAccount.connects }}" wx:for-item="item" wx:key="connectPlatformId">
-            <navigator url="/pages/webview" bind:tap="fresnsExtensions"
-                data-type="account"
-                data-scene="connect"
-                data-post-message-key="fresnsConnect"
-                data-connect-platform-id="{{ item.connectPlatformId }}"
-                data-url="{{ item.service }}"
-                data-title="{{ item.connected ? item.nickname : item.connectPlatformId }}">
-                <mp-cell value="{{ item.connectName }}" footer="{{ item.connected ? (item.nickname || '✅') : fresnsLang.settingNot }}" hover="{{ true }}" link="{{ true }}"/>
-            </navigator>
+            <block wx:if="{{ item.connectPlatformId == 25 && !item.connected }}">
+                <mp-cell icon="/assets/connects/{{ item.connectPlatformId }}.png" value="微信小程序" footer="{{ fresnsLang.settingAccountConnect }}" hover="{{ true }}" link="{{ true }}" bind:tap="onConnectWeChatMiniApp"/>
+            </block>
+            <block wx:else>
+                <navigator url="/pages/webview" bind:tap="fresnsExtensions"
+                    data-type="account"
+                    data-scene="connect"
+                    data-post-message-key="fresnsConnect"
+                    data-connect-platform-id="{{ item.connectPlatformId }}"
+                    data-url="{{ item.service }}"
+                    data-title="{{ item.connected ? item.nickname : item.connectPlatformId }}">
+                    <mp-cell icon="/assets/connects/{{ item.connectPlatformId }}.png" value="{{ item.connectPlatformId == 24 ? '微信' : (item.connectPlatformId == 25 ? '微信小程序' : item.connectName) }}" footer="{{ item.connected ? (item.nickname || '✅') : fresnsLang.settingAccountConnect }}" hover="{{ true }}" link="{{ true }}"/>
+                </navigator>
+            </block>
         </block>
     </mp-cells>
 
