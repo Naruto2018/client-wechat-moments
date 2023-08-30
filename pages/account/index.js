@@ -95,7 +95,7 @@ Page({
 
     wx.showNavigationBarLoading();
     this.setData({
-      loadingStatus: true
+      loadingStatus: true,
     });
 
     wx.removeStorageSync('fresnsAccount');
@@ -112,10 +112,10 @@ Page({
       complete: () => {
         wx.hideNavigationBarLoading();
         this.setData({
-          loadingStatus: false
+          loadingStatus: false,
         });
         console.log('reload data end');
-      }
+      },
     });
   },
 
