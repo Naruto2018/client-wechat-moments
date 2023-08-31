@@ -43,7 +43,8 @@ Page({
     }
 
     this.setData({
-      title: await fresnsConfig('menu_post_title'),
+      // title: await fresnsConfig('menu_post_title'),
+      title: await fresnsConfig('site_name'),
       logo: await fresnsConfig('site_logo'),
       requestState: requestState,
       requestQuery: requestQuery,
