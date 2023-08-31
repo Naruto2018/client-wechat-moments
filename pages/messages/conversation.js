@@ -53,7 +53,7 @@ Page({
         conversationId: conversationId,
       });
 
-      callPrevPageFunction('onMarkRead');
+      callPrevPageFunction('onMarkRead', conversationId);
     }
 
     wx.setNavigationBarTitle({
@@ -142,7 +142,7 @@ Page({
       if (resultRes.code == 0) {
         const messages = this.data.messages;
 
-        const idx = messages.findIndex((value) => value.id === id);
+        const idx = messages.findIndex((value) => value.id == id);
 
         if (idx >= 0) {
           messages.splice(idx, 1);
