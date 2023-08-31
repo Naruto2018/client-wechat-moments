@@ -95,8 +95,8 @@ Component({
     // 修改通知消息数
     onChangeUnreadNotifications: function () {
       const list = this.data.list;
-      list[4].count = list[4].count ? list[4].count -1 : list[4].count;
-  
+      list[4].count = list[4].count ? list[4].count - 1 : list[4].count;
+
       this.setData({
         list: list,
       });
