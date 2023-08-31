@@ -5,6 +5,7 @@
  */
 import { fresnsApi } from '../../api/api';
 import { fresnsConfig, fresnsLang } from '../../api/tool/function';
+import { callSpecificPageFunction, callSpecificPageComponentFunction } from '../../utils/fresnsUtilities';
 
 Page({
   /** 外部 mixin 引入 **/
@@ -100,13 +101,14 @@ Page({
       return;
     }
 
-    const idx = conversations.findIndex((value) => value.id === id);
+    const idx = conversations.findIndex((value) => value.id == id);
 
     if (idx == -1) {
       // 未找到记录
       return;
     }
 
+    const unreadCount = conversations[idx].unreadCount;
     conversations[idx].unreadCount = 0;
 
     this.setData({
@@ -114,6 +116,7 @@ Page({
     });
 
     wx.removeStorageSync('fresnsUserPanels');
-    callPrevPageFunction('onChangeUnreadMessages');
+    callSpecificPageFunction('pages/account/index', 'onChangeUnreadMessages', unreadCount);
+    callSpecificPageComponentFunction('pages/account/index', '#fresnsTabbar', 'onChangeUnreadMessages', unreadCount);
   },
 });

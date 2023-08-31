@@ -5,7 +5,7 @@
  */
 import { fresnsApi } from '../../api/api';
 import { fresnsConfig } from '../../api/tool/function';
-import { callPrevPageFunction } from '../../utils/fresnsUtilities';
+import { callPrevPageFunction, callPrevPageComponentFunction } from '../../utils/fresnsUtilities';
 
 Page({
   /** 外部 mixin 引入 **/
@@ -111,7 +111,7 @@ Page({
       return;
     }
 
-    const idx = notifications.findIndex((value) => value.id === id);
+    const idx = notifications.findIndex((value) => value.id == id);
 
     if (idx == -1) {
       // 未找到记录
@@ -126,6 +126,7 @@ Page({
 
     wx.removeStorageSync('fresnsUserPanels');
     callPrevPageFunction('onChangeUnreadNotifications');
+    callPrevPageComponentFunction('#fresnsTabbar', 'onChangeUnreadNotifications');
   },
 
   // 切换类型

@@ -48,12 +48,14 @@ Page({
       title = resultRes.data.user.status ? resultRes.data.user.nickname : userDeactivate;
 
       // 标对话为已读
-      await fresnsApi.message.conversationMarkAsRead({
-        type: 'conversation',
-        conversationId: conversationId,
-      });
+      if (resultRes.data.unreadCount > 0) {
+        await fresnsApi.message.conversationMarkAsRead({
+          type: 'conversation',
+          conversationId: conversationId,
+        });
 
-      callPrevPageFunction('onMarkRead', conversationId);
+        callPrevPageFunction('onMarkRead', conversationId);
+      }
     }
 
     wx.setNavigationBarTitle({
