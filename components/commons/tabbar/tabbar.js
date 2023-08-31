@@ -48,6 +48,7 @@ Component({
         pagePath: '/pages/account/index',
       },
     ],
+    publishPostName: '发表',
   },
 
   /** 组件生命周期声明对象 **/
