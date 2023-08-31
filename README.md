@@ -23,12 +23,11 @@
 
 > 所有频道栏目的命名是读取后台配置，请自行在 Fresns 后台配置，代码中没有写死的名称。
 
-> 由于微信的规则要求，需要在后台修改一下语言包内容。[https://discuss.fresns.cn/post/K9ydts1v](https://discuss.fresns.cn/post/K9ydts1v)
-
 ## 隐藏政策配置说明
 
 - 1、协议条款需修改系统文案，位置：`后台->客户端->语言包配置->配置语言包`
     - 将标识名 `accountInfo` 的语言内容修改为 `已阅读并同意`
+    - 详细介绍 [https://discuss.fresns.cn/post/K9ydts1v](https://discuss.fresns.cn/post/K9ydts1v)
 - 2、本小程序涉及以下隐私内容：
     - 选中的照片或视频信息：用于`发表附带图片或视频的内容`
     - 发布内容：用于`发表帖子和评论`
