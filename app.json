@@ -111,11 +111,13 @@
     "pages/webview"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTitleText": "Fresns 官方社区",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "@navTxtStyle"
   },
+  "darkmode": false,
+  "themeLocation": "theme.json",
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "chooseLocation": {
