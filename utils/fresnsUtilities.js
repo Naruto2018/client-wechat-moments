@@ -118,7 +118,7 @@ export function callPrevPageComponentFunction(componentSelector, functionName, .
 // 回调指定页面
 export function callSpecificPageFunction(route, functionName, ...args) {
   const pages = getCurrentPages();
-  const targetPage = pages.find(page => page.route === route);
+  const targetPage = pages.find((page) => page.route === route);
 
   if (!targetPage) return;
 
@@ -131,7 +131,7 @@ export function callSpecificPageFunction(route, functionName, ...args) {
 // 回调指定页面中的组件
 export function callSpecificPageComponentFunction(route, componentSelector, functionName, ...args) {
   const pages = getCurrentPages();
-  const targetPage = pages.find(page => page.route === route);
+  const targetPage = pages.find((page) => page.route === route);
 
   if (!targetPage) return;
 
