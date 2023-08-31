@@ -81,6 +81,8 @@
 </block>
 
 <block wx:else>
+    <view class="login-tip">{{ fsLang.errorNoLogin }}</view>
+
     <navigator url="/pages/account/login" class="weui-btn weui-btn_primary">
         {{ fsLang.accountLogin }}
     </navigator>
