@@ -5,6 +5,7 @@
  */
 import { fresnsApi } from '../../api/api';
 import { fresnsConfig } from '../../api/tool/function';
+import { callPrevPageFunction } from '../../utils/fresnsUtilities';
 
 Page({
   /** 外部 mixin 引入 **/
@@ -122,6 +123,9 @@ Page({
     this.setData({
       notifications: notifications,
     });
+
+    wx.removeStorageSync('fresnsUserPanels');
+    callPrevPageFunction('onChangeUnreadNotifications');
   },
 
   // 切换类型

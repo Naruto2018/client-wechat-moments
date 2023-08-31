@@ -5,6 +5,7 @@
  */
 import { fresnsApi } from '../../api/api';
 import { fresnsLang } from '../../api/tool/function';
+import { callPrevPageFunction } from '../../utils/fresnsUtilities';
 
 Page({
   /** 外部 mixin 引入 **/
@@ -51,6 +52,8 @@ Page({
         type: 'conversation',
         conversationId: conversationId,
       });
+
+      callPrevPageFunction('onMarkRead');
     }
 
     wx.setNavigationBarTitle({
