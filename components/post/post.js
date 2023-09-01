@@ -87,5 +87,9 @@ Component({
         url: '/pages/posts/detail?pid=' + this.data.post.pid,
       });
     },
+
+    triggerComment: function() {
+      this.selectComponent("#interactionComponent").onClickCreateComment();
+    },
   },
 });

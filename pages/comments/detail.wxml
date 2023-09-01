@@ -9,7 +9,7 @@
         <loading status="{{ loadingStatus }}" tipType="{{ loadingTipType }}"></loading>
     </block>
     <block wx:if="{{ comment }}">
-        <comment comment="{{ comment }}" type="detail"></comment>
+        <comment id="commentComponent" comment="{{ comment }}" type="detail"></comment>
     </block>
 
     <!-- 评论互动 -->
@@ -31,23 +31,6 @@
         <view class="weui-tabbar__item" bind:tap="onClickCreateComment">
             <view class="weui-tabbar__label">
                 {{ commentBtnName }}
-            </view>
-        </view>
-    </view>
-
-    <view wx:if="{{ showCommentBox }}" aria-role="dialog" aria-modal="true" aria-labelledby="js_dialog_title">
-        <view class="weui-mask {{ showCommentBox ? 'weui-animate_fade-in' : 'weui-animate_fade-out'}}" bind:tap="onCommentBoxHide"></view>
-        <view class="weui-half-screen-dialog {{ showCommentBox ? 'weui-animate_slide-up' : 'weui-animate_slide-down'}}">
-            <view class="weui-half-screen-dialog__hd">
-                <view class="weui-half-screen-dialog__hd__side" bind:tap="onCommentBoxHide">
-                    <mp-icon icon="close" size="{{ 24 }}"/>
-                </view>
-                <view class="weui-half-screen-dialog__hd__main">
-                    <strong class="weui-half-screen-dialog__title" id="js_dialog_title">{{ title }}</strong>
-                </view>
-            </view>
-            <view class="weui-half-screen-dialog__bd" style="padding-bottom: 88px;">
-                <comment-box pid="{{ comment.replyToPost.pid }}" cid="{{ comment.cid }}" nickname="{{ nickname }}"/>
             </view>
         </view>
     </view>

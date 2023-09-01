@@ -24,7 +24,7 @@
             </view>
 
             <view class="content-text">
-                <mp-html content="{{ postContent }}" markdown="{{ true }}" lazy-load="true" />
+                <mp-html content="{{ postContent }}" markdown="{{ true }}" lazy-load="true"/>
             </view>
 
             <view class="content-brief" wx:if="{{ type == 'list' && post.isBrief }}">
@@ -109,6 +109,6 @@
 
     <!-- 功能按钮 -->
     <view class="card-footer {{ (type == 'list') ? 'list-style' : '' }}">
-        <interaction type="{{ type }}" post="{{ post }}"></interaction>
+        <interaction id="interactionComponent" type="{{ type }}" post="{{ post }}"></interaction>
     </view>
 </view>
