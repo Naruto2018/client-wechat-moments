@@ -94,8 +94,12 @@ Component({
 
     // 修改通知消息数
     onChangeUnreadNotifications: function () {
+      console.log('onChangeUnreadNotifications tabbar');
+
       const list = this.data.list;
-      list[4].count = list[4].count ? list[4].count - 1 : list[4].count;
+      const newCount = list[4].count - 1;
+
+      list[4].count = newCount;
 
       this.setData({
         list: list,
@@ -104,9 +108,12 @@ Component({
 
     // 修改私信消息数
     onChangeUnreadMessages: function (count = 1) {
-      console.log('onChangeUnreadMessages tabbar count', count);
+      console.log('onChangeUnreadMessages tabbar', count);
+
       const list = this.data.list;
-      list[4].count = list[4].count ? list[4].count - count : list[4].count;
+      const newCount = list[4].count - count;
+
+      list[4].count = newCount;
 
       this.setData({
         list: list,

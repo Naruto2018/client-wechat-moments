@@ -36,10 +36,13 @@ Component({
       const id = e.currentTarget.dataset.id;
       const status = e.currentTarget.dataset.status;
 
+      console.log('onCheckRead status', status);
+
       if (status) {
         return;
       }
 
+      console.log('onCheckRead', 'markRead');
       const resultRes = await fresnsApi.message.notificationMarkAsRead({
         type: 'choose',
         notificationIds: id.toString(),
