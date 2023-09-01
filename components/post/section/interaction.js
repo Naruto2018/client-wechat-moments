@@ -22,6 +22,7 @@ Component({
     title: null,
 
     showCommentBox: false,
+    commentBoxBottom: 0,
     nickname: null,
 
     showShareActionSheet: false,
@@ -178,10 +179,16 @@ Component({
       });
     },
 
-    // 评论框隐藏
-    onCommentBoxHide: function () {
+    // 评论框高度
+    eventCommentBoxHeight: function(e) {
+      let height = e.detail.height;
+
+      if (e.detail.height) {
+        height = e.detail.height + 50;
+      }
+
       this.setData({
-        showCommentBox: false,
+        commentBoxBottom: height,
       });
     },
 
