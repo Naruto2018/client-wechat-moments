@@ -79,8 +79,8 @@ Component({
       });
     },
 
-    triggerComment: function() {
-      this.selectComponent("#interactionComponent").onClickCreateComment();
+    triggerComment: function () {
+      this.selectComponent('#interactionComponent').onClickCreateComment();
     },
   },
 
