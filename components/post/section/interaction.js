@@ -185,6 +185,13 @@ Component({
       });
     },
 
+    // 评论框隐藏
+    eventCommentBoxHide: function () {
+      this.setData({
+        showCommentBox: false,
+      });
+    },
+
     // 分享
     onShowShareMenus() {
       this.setData({

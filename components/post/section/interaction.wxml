@@ -42,7 +42,7 @@
                     </view>
                 </view>
                 <view class="weui-half-screen-dialog__bd" style="padding-bottom: 88px;">
-                    <comment-box pid="{{ post.pid }}" cid="" nickname="{{ nickname }}"/>
+                    <comment-box pid="{{ post.pid }}" cid="" nickname="{{ nickname }}" bind:eventCommentBoxHide="eventCommentBoxHide"/>
                 </view>
             </view>
         </view>
