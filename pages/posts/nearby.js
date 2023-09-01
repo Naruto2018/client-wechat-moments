@@ -18,6 +18,7 @@ Page({
 
   /** 页面的初始数据 **/
   data: {
+    navbarTitle: null,
     title: null,
     logo: null,
     // 位置
@@ -54,7 +55,9 @@ Page({
     const mapUrl = `plugin://chooseLocation/index?key=${tencentMapKey}&referer=${tencentMapReferer}&location=${locationInfo}`;
 
     this.setData({
-      title: await fresnsConfig('menu_nearby_posts'),
+      navbarTitle: await fresnsConfig('menu_post_title'),
+      title: await fresnsConfig('site_name'),
+      // title: await fresnsConfig('menu_nearby_posts'),
       logo: await fresnsConfig('site_logo'),
       mapUrl: mapUrl,
       poi: await fresnsLang('location'),

@@ -18,6 +18,7 @@ Page({
 
   /** 页面的初始数据 **/
   data: {
+    navbarTitle: null,
     title: null,
     logo: null,
     // 当前页面数据
@@ -37,7 +38,9 @@ Page({
     });
 
     this.setData({
-      title: await fresnsConfig('menu_follow_all_posts'),
+      navbarTitle: await fresnsConfig('menu_post_title'),
+      title: await fresnsConfig('site_name'),
+      // title: await fresnsConfig('menu_follow_all_posts'),
       logo: await fresnsConfig('site_logo'),
     });
 

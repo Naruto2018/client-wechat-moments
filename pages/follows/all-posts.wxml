@@ -4,7 +4,7 @@
     Licensed under the Apache-2.0 license
 * -->
 <view class="page" data-weui-theme="{{ theme }}">
-    <t-navbar title="{{ title }}">
+    <t-navbar title="{{ navbarTitle }}">
         <view slot="left">
             <t-image t-class="logo-image" src="{{ logo }}" aria-label="Fresns" />
         </view>

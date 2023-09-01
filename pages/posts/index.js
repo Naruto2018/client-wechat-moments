@@ -18,6 +18,7 @@ Page({
 
   /** 页面的初始数据 **/
   data: {
+    navbarTitle: null,
     title: null,
     logo: null,
     // 默认查询条件
@@ -43,7 +44,7 @@ Page({
     }
 
     this.setData({
-      // title: await fresnsConfig('menu_post_title'),
+      navbarTitle: await fresnsConfig('menu_post_title'),
       title: await fresnsConfig('site_name'),
       logo: await fresnsConfig('site_logo'),
       requestState: requestState,
