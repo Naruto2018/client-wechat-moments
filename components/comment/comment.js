@@ -62,7 +62,10 @@ Component({
         const domainPattern = '(tangjie.me|fresns.cn|zhijieshequ.com)';
         const pureURLPattern = new RegExp(`(^|\\s)(https?:\\/\\/[^ \\n<]*${domainPattern}[^ \\n<]*)`, 'gi');
         const markdownURLPattern = new RegExp(`\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]*${domainPattern}[^)]*)\\)`, 'gi');
-        const aTagURLPattern = new RegExp(`<a[^>]*href="((?!\\/pages)https?:\\/\\/[^"]+)"[^>]*>((?!\\/pages)https?:\\/\\/[^<]+)<\\/a>`, 'gi');
+        const aTagURLPattern = new RegExp(
+          `<a[^>]*href="((?!\\/pages)https?:\\/\\/[^"]+)"[^>]*>((?!\\/pages)https?:\\/\\/[^<]+)<\\/a>`,
+          'gi'
+        );
 
         newContent = newContent.replace(pureURLPattern, '$1<a href="/pages/webview?url=$2">$2</a>');
         newContent = newContent.replace(markdownURLPattern, '<a href="/pages/webview?url=$2">$1</a>');
