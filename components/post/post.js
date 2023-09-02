@@ -65,18 +65,24 @@ Component({
         let matchId = 0;
 
         // 匹配 fresns.cn 和 zhijieshequ.com
-        let domainPattern = "(fresns\.cn|zhijieshequ\.com)";
+        let domainPattern = '(fresns.cn|zhijieshequ.com)';
 
         // 提取所有链接并替换为占位符
         newContent = newContent.replace(
-          new RegExp(`(\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]*${domainPattern}[^)]*)\\)|<a\\s+href="(https?:\\/\\/[^"]*${domainPattern}[^"]*)"[^>]*>([^<]+)<\\/a>|(^|[^"])(https?:\\/\\/[^ \\n<]*${domainPattern}[^ \\n<]*))`, 'gi'),
+          new RegExp(
+            `(\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]*${domainPattern}[^)]*)\\)|<a\\s+href="(https?:\\/\\/[^"]*${domainPattern}[^"]*)"[^>]*>([^<]+)<\\/a>|(^|[^"])(https?:\\/\\/[^ \\n<]*${domainPattern}[^ \\n<]*))`,
+            'gi'
+          ),
           (match, p1, p2, p3, p4, p5, p6, p7) => {
             let replacement;
-            if (p2 && p3) { // 对于 Markdown 格式
+            if (p2 && p3) {
+              // 对于 Markdown 格式
               replacement = `<a href="/pages/webview?url=${p3}">${p2}</a>`;
-            } else if (p4 && p5) { // 对于 <a> 标签格式
+            } else if (p4 && p5) {
+              // 对于 <a> 标签格式
               replacement = `<a href="/pages/webview?url=${p4}">${p5}</a>`;
-            } else if (p7) { // 对于纯 URL 格式
+            } else if (p7) {
+              // 对于纯 URL 格式
               replacement = `<a href="/pages/webview?url=${p7}">${p7}</a>`;
             }
 
