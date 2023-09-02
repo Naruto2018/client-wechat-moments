@@ -8,7 +8,9 @@
 
 ## 介绍
 
-本小程序是基于 [Fresns App for WeChat Mini Program](https://github.com/fresns/wechat) 框架小程序二次定制开发。与网站主题模板 [Moments](https://marketplace.fresns.com/open-source/detail/Moments) 体验一致，因此命名为 **MomentsWeChat**
+本小程序是基于 [Fresns App for WeChat Mini Program](https://github.com/fresns/wechat) 框架版小程序二次定制开发，采用原生语言开发，支持 Donut 跨端方案，可编译为 iOS 和 Android 应用。
+
+因为与网站主题模板 [Moments](https://marketplace.fresns.com/open-source/detail/Moments) 体验一致，所以命名为 **MomentsWeChat**
 
 ![MomentsWeChat](https://files.fresns.org/wiki/previews/MomentsWeChat.png)
 
