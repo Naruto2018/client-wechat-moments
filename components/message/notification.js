@@ -36,21 +36,16 @@ Component({
       const id = e.currentTarget.dataset.id;
       const status = e.currentTarget.dataset.status;
 
-      console.log('onCheckRead status', status);
-
       if (status) {
         return;
       }
 
-      console.log('onCheckRead', 'markRead');
-      const resultRes = await fresnsApi.message.notificationMarkAsRead({
+      callPageFunction('onMarkRead', id);
+
+      await fresnsApi.message.notificationMarkAsRead({
         type: 'choose',
         notificationIds: id.toString(),
       });
-
-      if (resultRes.code === 0) {
-        callPageFunction('onMarkRead', id);
-      }
     },
 
     onClickToDetail: async function () {
