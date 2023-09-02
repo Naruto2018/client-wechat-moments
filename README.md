@@ -12,6 +12,8 @@
 
 ![MomentsWeChat](https://files.fresns.org/wiki/previews/MomentsWeChat.png)
 
+![Fresns 小程序](https://cdn.fresns.cn/images/miniprogram.png)
+
 ## 使用说明
 
 - 1、下载[代码包](https://github.com/fresns/wechat-moments/releases)；
