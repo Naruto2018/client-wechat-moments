@@ -60,7 +60,7 @@ export async function getHeaders() {
 
   let timeDiff = now.getTimezoneOffset() * 60 * 1000; // 获取时区偏移的毫秒数
   if (isDST()) {
-      timeDiff += 60 * 60 * 1000; // 增加一个小时
+    timeDiff += 60 * 60 * 1000; // 增加一个小时
   }
 
   const utcPositiveOffset = Math.floor(Date.now() + timeDiff); // 东区
