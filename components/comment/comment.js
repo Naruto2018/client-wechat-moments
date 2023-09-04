@@ -61,7 +61,10 @@ Component({
         // 处理自有链接
         const domainPattern = '(tangjie.me|fresns.cn|zhijieshequ.com)';
         const pureURLPattern = new RegExp(`(^|\\s)(https?:\\/\\/[^ \\n<]*${domainPattern}[^ \\n<]*)`, 'gi');
-        const markdownURLPattern = new RegExp(`(?<!!)\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]*${domainPattern}[^)]*)\\)`, 'gi');
+        const markdownURLPattern = new RegExp(
+          `(?<!!)\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]*${domainPattern}[^)]*)\\)`,
+          'gi'
+        );
         const aTagHrefPattern = new RegExp(`(\\<a[^>]*?)href="((https?:\\/\\/[^"]*${domainPattern}[^"]*))"`, 'gi');
 
         newContent = newContent.replace(pureURLPattern, '$1<a href="/pages/webview?url=$2">$2</a>');
