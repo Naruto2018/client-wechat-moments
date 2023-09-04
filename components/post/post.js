@@ -65,14 +65,14 @@ Component({
           `(?<!!)\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]*${domainPattern}[^)]*)\\)`,
           'gi'
         );
-        const aTagURLPattern = new RegExp(
-          `<a[^>]*href="((?!\\/pages)https?:\\/\\/[^"]+)"[^>]*>((?!\\/pages)https?:\\/\\/[^<]+)<\\/a>`,
+        const aTagHrefPattern = new RegExp(
+          `(\\<a[^>]*?)href="((https?:\\/\\/[^"]*${domainPattern}[^"]*))"`,
           'gi'
         );
 
         newContent = newContent.replace(pureURLPattern, '$1<a href="/pages/webview?url=$2">$2</a>');
         newContent = newContent.replace(markdownURLPattern, '<a href="/pages/webview?url=$2">$1</a>');
-        newContent = newContent.replace(aTagURLPattern, '<a href="/pages/webview?url=$1">$2</a>');
+        newContent = newContent.replace(aTagHrefPattern, '$1href="/pages/webview?url=$2"');
       }
 
       this.setData({
