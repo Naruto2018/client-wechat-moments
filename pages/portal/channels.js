@@ -71,7 +71,7 @@ Page({
           this.setData({
             sponsorData: res.data,
           });
-        }
+        },
       });
     }
 
