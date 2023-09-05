@@ -10,7 +10,7 @@ import { cacheGet, cachePut } from './fresnsUtilities';
 
 export class GlobalInfo {
   clientName = 'Moments';
-  clientVersion = '1.1.3';
+  clientVersion = '1.2.0';
   theme = null;
 
   // 处理用户主页路径
