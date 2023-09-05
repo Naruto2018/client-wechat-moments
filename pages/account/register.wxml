@@ -87,7 +87,7 @@
         <checkbox class="weui-agree__checkbox-check"/>
         <i class="weui-agree__checkbox"></i>
         <span class="weui-agree__text">
-            <text aria-hidden="true">{{ fresnsLang.accountInfo }}</text>
+            <text aria-hidden="true">{{ fresnsLang.accountPoliciesCheck }}</text>
             <navigator url="/pages/portal/policies?active=terms">《{{ fresnsLang.accountPoliciesTerms }}》</navigator>
             <navigator url="/pages/portal/policies?active=privacy">《{{ fresnsLang.accountPoliciesPrivacy }}》</navigator>
             <navigator url="/pages/portal/policies?active=cookies">《{{ fresnsLang.accountPoliciesCookies }}》</navigator>
