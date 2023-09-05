@@ -52,7 +52,11 @@ Component({
 
       const currentPagePath = getCurrentPagePath();
 
-      if (currentPagePath == 'pages/editor/index' || currentPagePath == 'pages/account/login' || currentPagePath == 'pages/account/register') {
+      if (
+        currentPagePath == 'pages/editor/index' ||
+        currentPagePath == 'pages/account/login' ||
+        currentPagePath == 'pages/account/register'
+      ) {
         callPageFunction('navigateBack');
       }
     },
