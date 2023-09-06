@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/posts/index",
-
     "pages/portal/index",
     "pages/portal/about",
     "pages/portal/policies",
@@ -30,6 +28,7 @@
     "pages/hashtags/blocking",
     "pages/hashtags/detail",
 
+    "pages/posts/index",
     "pages/posts/list",
     "pages/posts/nearby",
     "pages/posts/location",
@@ -110,6 +109,7 @@
 
     "pages/webview"
   ],
+  "entryPagePath": "pages/posts/index",
   "window": {
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
