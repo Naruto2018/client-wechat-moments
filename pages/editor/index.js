@@ -66,7 +66,7 @@ Page({
           }
         },
       });
-    };
+    }
 
     // 编辑器参数
     const type = options.type || 'post'; // 内容类型，帖子或评论

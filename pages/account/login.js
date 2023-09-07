@@ -73,7 +73,7 @@ Page({
           }
         },
       });
-    };
+    }
 
     const [defaultCode, codeArray] = await Promise.all([
       fresnsConfig('send_sms_default_code'),
