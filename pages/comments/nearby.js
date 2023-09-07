@@ -132,7 +132,7 @@ Page({
         });
 
         await this.loadFresnsPageData();
-      }
+      },
     });
   },
 });

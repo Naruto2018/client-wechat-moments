@@ -76,7 +76,7 @@ Component({
           };
 
           callPageFunction('onLocationChange', mapJson);
-        }
+        },
       });
     },
 

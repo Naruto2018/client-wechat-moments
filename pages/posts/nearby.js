@@ -139,7 +139,7 @@ Page({
         });
 
         await this.loadFresnsPageData();
-      }
+      },
     });
   },
 });
