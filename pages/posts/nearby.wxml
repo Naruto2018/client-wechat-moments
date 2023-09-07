@@ -12,7 +12,7 @@
 
     <tabs defaultValue="nearby"></tabs>
 
-    <t-cell title="{{ poi }}" note="{{ select }}" url="{{ mapUrl }}" hover arrow leftIcon="location" bordered="{{ false }}" />
+    <t-cell title="{{ poi }}" note="{{ select }}" hover arrow leftIcon="location" bordered="{{ false }}" bind:tap="onClickSelectLocation"/>
 
     <!-- 帖子列表 -->
     <view class="post-list" wx:for="{{ posts }}" wx:for-item="post" wx:key="pid">
