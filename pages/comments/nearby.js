@@ -127,9 +127,9 @@ Page({
         },
         fail() {
           return;
-        }
+        },
       });
-    };
+    }
 
     const { latitude, longitude } = this.data;
 
