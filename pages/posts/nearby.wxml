@@ -28,4 +28,7 @@
 
     <!-- Tabbar -->
     <tabbar id="fresnsTabbar" activeLabel="posts"></tabbar>
+
+    <!-- 隐私授权 -->
+    <privacy showPrivacy="{{ showPrivacy }}"/>
 </view>
