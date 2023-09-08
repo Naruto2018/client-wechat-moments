@@ -110,6 +110,8 @@ export class FresnsLogin {
 
   // 微信登录处理功能
   async wechatLoginHandle(wechatCode, autoRegister = false, isRedirect = true) {
+    console.log('wechatLoginHandle', wechatCode, autoRegister, isRedirect);
+
     const loginRes = await fresnsApi.wechatLogin.oauth({
       code: wechatCode,
       autoRegister: autoRegister,
