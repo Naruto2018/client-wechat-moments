@@ -132,10 +132,4 @@ Page({
 
     await this.loadFresnsPageData();
   },
-
-  handleClick() {
-    wx.navigateTo({
-      url: '/pages/editor/index?type=post',
-    });
-  },
 });
