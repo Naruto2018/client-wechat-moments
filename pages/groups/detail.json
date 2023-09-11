@@ -2,6 +2,7 @@
   "navigationBarTitleText": "小组",
   "enablePullDownRefresh": true,
   "usingComponents": {
+    "t-fab": "tdesign-miniprogram/fab/fab",
     "interaction": "/components/group/section/interaction",
     "loading": "/components/commons/loading/loading",
     "post": "/components/post/post"

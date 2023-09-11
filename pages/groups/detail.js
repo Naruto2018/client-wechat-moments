@@ -27,6 +27,7 @@ Page({
     group: null,
     extensions: [],
     viewContentTip: '',
+    showPublishBtn: false,
 
     // 置顶帖子
     stickyPosts: [],
@@ -51,6 +52,7 @@ Page({
         title: groupDetailRes.data.detail.gname,
         group: groupDetailRes.data.detail,
         extensions: groupDetailRes.data.items.extensions,
+        showPublishBtn: groupDetailRes.data.detail.publishRule.allowPost,
       });
 
       wx.setNavigationBarTitle({
@@ -109,7 +111,7 @@ Page({
     });
 
     const whitelistKeys =
-      'pid,url,title,content,contentLength,isBrief,isMarkdown,isAnonymous,stickyState,digestState,createdTimeAgo,editedTimeAgo,likeCount,dislikeCount,commentCount,readConfig,affiliatedUserConfig,moreJson,location,operations,files,group.gid,group.gname,group.cover,author.fsid,author.uid,author.username,author.nickname,author.avatar,author.decorate,author.verifiedStatus,author.nicknameColor,author.roleName,author.roleNameDisplay,author.status,quotedPost.pid,quotedPost.title,quotedPost.content,quotedPost.author.nickname,quotedPost.author.avatar,quotedPost.author.status,previewComments,manages,editControls,interaction';
+      'pid,url,title,content,contentLength,isBrief,isMarkdown,isAnonymous,stickyState,digestState,createdTimeAgo,editedTimeAgo,likeCount,dislikeCount,commentCount,readConfig,affiliatedUserConfig,moreJson,location,operations,files,author.fsid,author.uid,author.username,author.nickname,author.avatar,author.decorate,author.verifiedStatus,author.nicknameColor,author.roleName,author.roleNameDisplay,author.status,quotedPost.pid,quotedPost.title,quotedPost.content,quotedPost.author.nickname,quotedPost.author.avatar,quotedPost.author.status,previewComments,manages,editControls,interaction';
 
     const postsRes = await fresnsApi.post.postList(
       Object.assign(this.data.query, {
@@ -161,5 +163,14 @@ Page({
   /** 监听用户上拉触底 **/
   onReachBottom: async function () {
     await this.loadFresnsPageData();
+  },
+
+  // 发表
+  onClickPublish() {
+    const group = this.data.group;
+
+    wx.navigateTo({
+      url: '/pages/editor/index?type=post' + '&postGid=' + group.gid,
+    });
   },
 });
