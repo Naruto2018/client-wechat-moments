@@ -49,7 +49,7 @@ export async function getHeaders() {
   const timezoneOffsetInHours = now.getTimezoneOffset() / -60; // 获取时区偏移的小时数
   const utcTimezone = (timezoneOffsetInHours > 0 ? '+' : '') + timezoneOffsetInHours.toString(); // 获取 UTC 时区
 
-  const utc8Timestamp = Date.now(); // UTC+8 时区的时间戳
+  const utc8Timestamp = Date.now(); // UTC+8 时区的时间戳（微信固定为东八区时间）
   const utcTimestamp = utc8Timestamp - 8 * 60 * 60 * 1000; // 获取 UTC+0 时区的 Unix 时间戳
 
   const headers = {
