@@ -18,6 +18,7 @@ Component({
 
   /** 组件的初始数据 **/
   data: {
+    appInfo: {},
     fresnsLang: {},
     title: null,
 
@@ -51,8 +52,16 @@ Component({
   /** 组件生命周期声明对象 **/
   lifetimes: {
     attached: async function () {
+      const appInfo = wx.getStorageSync('appInfo');
+
       this.setData({
-        fresnsLang: await fresnsLang(),
+        appInfo: appInfo,
+        fresnsLang: {
+          copyLink: await fresnsLang('copyLink'),
+          shareMessage: await fresnsLang('shareMessage'),
+          cancel: await fresnsLang('cancel'),
+          contentAuthorLiked: await fresnsLang('contentAuthorLiked'),
+        },
       });
     },
   },
@@ -228,6 +237,12 @@ Component({
       this.setData({
         showShareActionSheet: true,
       });
+    },
+
+    // 多端应用分享给好友
+    onShareMiniAppMessage() {
+      // wx.miniapp.shareMiniProgramMessage
+      // wx.miniapp.shareWebPageMessage
     },
 
     // 更多菜单
