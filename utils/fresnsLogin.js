@@ -93,7 +93,6 @@ export class FresnsLogin {
     wx.login({
       success: async (res) => {
         const wechatCode = res.code;
-        console.log('WeChat Code', wechatCode);
 
         if (wechatCode) {
           await this.connectLoginHandle('wechat', wechatCode, autoRegister);
@@ -109,10 +108,15 @@ export class FresnsLogin {
           title: '[' + res.errCode + '] ' + res.errMsg,
           icon: 'none',
         });
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       },
       complete() {
         if (callback && typeof callback === 'function') {
-          callback();
+          setTimeout(() => {
+            callback();
+          }, 2000); // 延迟 2 秒
         }
       },
     });
@@ -120,10 +124,9 @@ export class FresnsLogin {
 
   // App 微信登录
   async appWechatLogin(autoRegister = false, callback) {
-    wx.weixinAppLogin({
+    wx.miniapp.login({
       success: async (res) => {
         const wechatCode = res.code;
-        console.log('App WeChat Code', wechatCode);
 
         if (wechatCode) {
           await this.connectLoginHandle('app', wechatCode, autoRegister);
@@ -139,10 +142,15 @@ export class FresnsLogin {
           title: '[' + res.errCode + '] ' + res.errMsg,
           icon: 'none',
         });
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       },
       complete() {
         if (callback && typeof callback === 'function') {
-          callback();
+          setTimeout(() => {
+            callback();
+          }, 2000); // 延迟 2 秒
         }
       },
     });
@@ -153,7 +161,6 @@ export class FresnsLogin {
     wx.appleLogin({
       success: async (res) => {
         const appleCode = res.code;
-        console.log('Apple Code', appleCode);
 
         if (appleCode) {
           await this.connectLoginHandle('apple', appleCode, autoRegister);
@@ -169,10 +176,15 @@ export class FresnsLogin {
           title: '[' + res.errCode + '] ' + res.errMsg,
           icon: 'none',
         });
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       },
       complete() {
         if (callback && typeof callback === 'function') {
-          callback();
+          setTimeout(() => {
+            callback();
+          }, 2000); // 延迟 2 秒
         }
       },
     });
