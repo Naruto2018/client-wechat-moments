@@ -270,14 +270,14 @@ Page({
       case 'ios':
         wx.miniapp.jumpToAppStore({
           success: (res) => {
-            console.log('jumpToAppStore success:', res)
+            console.log('jumpToAppStore success:', res);
           },
           fail: (res) => {
             wx.showToast({
               title: res,
               icon: 'none',
             });
-            console.log('jumpToAppStore fail:', res)
+            console.log('jumpToAppStore fail:', res);
           },
         });
         break;
@@ -286,29 +286,29 @@ Page({
         wx.downloadFile({
           url: appInfo.apkUrl,
           success(res) {
-            console.log('download apk success', res)
+            console.log('download apk success', res);
             wx.miniapp.installApp({
               filePath: res.tempFilePath,
               success(res) {
-                console.log('install app success', res)
+                console.log('install app success', res);
               },
               fail(res) {
                 wx.showToast({
                   title: res,
                   icon: 'none',
                 });
-                console.log('install app fail', res)
-              }
-            })
+                console.log('install app fail', res);
+              },
+            });
           },
           fail(res) {
             wx.showToast({
               title: res,
               icon: 'none',
             });
-            console.log('download apk fail', res)
-          }
-        })
+            console.log('download apk fail', res);
+          },
+        });
         break;
 
       case 'devtools':
