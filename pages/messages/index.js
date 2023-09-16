@@ -82,12 +82,12 @@ Page({
   },
 
   /** 监听用户下拉动作 **/
-    onPullDownRefresh: async function () {
+  onPullDownRefresh: async function () {
     // 防抖判断
     if (isRefreshing) {
       wx.stopPullDownRefresh();
       return;
-    };
+    }
 
     isRefreshing = true;
 
