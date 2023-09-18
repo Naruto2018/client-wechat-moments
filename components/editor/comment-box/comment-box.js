@@ -77,6 +77,8 @@ Component({
           comment_editor_hashtag: await fresnsConfig('comment_editor_hashtag'),
           comment_editor_sticker: await fresnsConfig('comment_editor_sticker'),
           comment_editor_image: await fresnsConfig('comment_editor_image'),
+          comment_editor_mention: await fresnsConfig('comment_editor_mention'),
+          comment_editor_hashtag: await fresnsConfig('comment_editor_hashtag'),
           comment_editor_anonymous: await fresnsConfig('comment_editor_anonymous'),
         },
         fsLang: {
@@ -263,6 +265,24 @@ Component({
 
       this.setData({
         imageShowActionSheet: false,
+      });
+    },
+
+    // 选择艾特
+    onMention() {
+      this.triggerEvent('eventCommentDialogFullScreen', { status: true });
+
+      this.setData({
+        showMentionDialog: true,
+      });
+    },
+
+    // 选择话题
+    onHashtag() {
+      this.triggerEvent('eventCommentDialogFullScreen', { status: true });
+
+      this.setData({
+        showHashtagDialog: true,
       });
     },
 
