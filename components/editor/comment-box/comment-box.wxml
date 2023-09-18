@@ -20,8 +20,8 @@
         </view>
     </view>
 
-    <editor-mention wx:if="{{ fresnsConfig.comment_editor_mention }}" show="{{ showMentionDialog }}" bind:eventContentInsert="eventContentInsert"/>
-    <editor-hashtag wx:if="{{ fresnsConfig.comment_editor_hashtag }}" show="{{ showHashtagDialog }}" config="{{ hashtagConfig }}" bind:eventContentInsert="eventContentInsert"/>
+    <editor-mention wx:if="{{ fresnsConfig.comment_editor_mention }}" show="{{ showMentionDialog }}" bind:eventContentInsert="eventContentInsert" bind:eventCloseMentionDialog="eventCloseMentionDialog"/>
+    <editor-hashtag wx:if="{{ fresnsConfig.comment_editor_hashtag }}" show="{{ showHashtagDialog }}" config="{{ hashtagConfig }}" bind:eventContentInsert="eventContentInsert" bind:eventCloseHashtagDialog="eventCloseHashtagDialog"/>
 
     <view class="fresns-toolbar">
         <view class="tool" wx:if="{{ fresnsConfig.comment_editor_sticker }}" data-type="sticker" bind:tap="onStickers">

@@ -71,7 +71,14 @@ Component({
       ];
 
       this.setData({
-        fresnsConfig: await fresnsConfig(),
+        fresnsConfig: {
+          publish_comment_name: await fresnsConfig('publish_comment_name'),
+          comment_editor_mention: await fresnsConfig('comment_editor_mention'),
+          comment_editor_hashtag: await fresnsConfig('comment_editor_hashtag'),
+          comment_editor_sticker: await fresnsConfig('comment_editor_sticker'),
+          comment_editor_image: await fresnsConfig('comment_editor_image'),
+          comment_editor_anonymous: await fresnsConfig('comment_editor_anonymous'),
+        },
         fsLang: {
           errorNoLogin: await fresnsLang('errorNoLogin'),
           accountLoginGoTo: await fresnsLang('accountLoginGoTo'),
@@ -108,14 +115,18 @@ Component({
       const prevCharacter = value.charAt(cursorPosition - 1);
 
       if (fsConfig.comment_editor_mention && prevCharacter === '@') {
+        this.triggerEvent('eventCommentDialogFullScreen', { status: true });
+
         this.setData({
-          showMentionDialog: !this.data.showMentionDialog,
+          showMentionDialog: true,
         });
       }
 
       if (fsConfig.comment_editor_hashtag && prevCharacter === '#') {
+        this.triggerEvent('eventCommentDialogFullScreen', { status: true });
+
         this.setData({
-          showHashtagDialog: !this.data.showHashtagDialog,
+          showHashtagDialog: true,
         });
       }
     },
@@ -150,6 +161,23 @@ Component({
       const text = event.detail.data;
 
       this.onContentInsert(text);
+
+      this.triggerEvent('eventCommentDialogFullScreen', { status: false });
+    },
+
+    eventCloseMentionDialog() {
+      this.setData({
+        showMentionDialog: false,
+      });
+
+      this.triggerEvent('eventCommentDialogFullScreen', { status: false });
+    },
+    eventCloseHashtagDialog() {
+      this.setData({
+        showHashtagDialog: false,
+      });
+
+      this.triggerEvent('eventCommentDialogFullScreen', { status: false });
     },
 
     // 选择表情
@@ -250,6 +278,8 @@ Component({
     // 内容插入新内容
     onContentInsert(text) {
       console.log('onContentInsert', text);
+
+      this.triggerEvent('eventCommentDialogFullScreen', { status: false });
 
       const content = this.data.content;
       const cursorPosition = this.data.contentCursorPosition;
