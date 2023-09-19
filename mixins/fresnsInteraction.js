@@ -727,13 +727,13 @@ module.exports = {
         const commentDetailRes = await fresnsApi.comment.commentDetail({
           cid: newCid,
         });
-  
+
         if (commentDetailRes.code === 0) {
           let detail = commentDetailRes.data.detail;
           detail.replyToPost = {
             pid: detail.replyToPost.pid,
           };
-  
+
           comments.unshift(detail);
         }
       }
