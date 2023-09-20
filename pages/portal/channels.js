@@ -27,7 +27,7 @@ Page({
     channels: [],
 
     // fresns 赞助商配置
-    sponsor: true,
+    sponsor: false,
     sponsorAsset: 'https://cdn.fresns.cn/sponsor/images/',
     sponsorData: [],
   },
