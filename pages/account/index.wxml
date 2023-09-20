@@ -174,7 +174,7 @@
         </block>
         <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" target="miniProgram" app-id="wxbc94bda125907f11">
             <view class="weui-cell__bd">知结</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access">互联网从业者的资讯社区</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 14px;">互联网从业者的资讯社区</view>
         </navigator>
         <view class="weui-cell weui-cell_access" wx:if="{{ appInfo.isWechat && clientInfo.version }}" bind:tap="onDownloadApp">
             <view class="weui-cell__bd">{{ fresnsLang.useApp }}</view>
