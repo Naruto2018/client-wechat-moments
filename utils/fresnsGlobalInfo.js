@@ -11,7 +11,7 @@ import { base64_encode } from '../libs/base64/base64';
 
 export class GlobalInfo {
   clientName = 'Moments';
-  clientVersion = '1.3.4';
+  clientVersion = '1.4.0';
   theme = null;
 
   // 处理用户主页路径
@@ -153,8 +153,6 @@ export class GlobalInfo {
 
       // device info
       const base64DeviceInfo = base64_encode(JSON.stringify(deviceInfo));
-
-      console.log('deviceInfo', deviceInfo, base64DeviceInfo);
 
       wx.setStorageSync('deviceInfo', base64DeviceInfo);
     }
