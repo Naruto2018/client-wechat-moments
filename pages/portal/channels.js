@@ -3,6 +3,7 @@
  * Copyright 2021-Present 唐杰
  * Licensed under the Apache-2.0 license
  */
+import appConfig from '../../fresns';
 import { fresnsApi } from '../../api/api';
 import { fresnsConfig, fresnsLang } from '../../api/tool/function';
 
@@ -27,7 +28,7 @@ Page({
     channels: [],
 
     // fresns 赞助商配置
-    sponsor: false,
+    isFresns: false,
     sponsorAsset: 'https://cdn.fresns.cn/sponsor/images/',
     sponsorData: [],
   },
@@ -60,7 +61,10 @@ Page({
       channels = resultChannels.data;
     }
 
-    if (this.data.sponsor) {
+    // 赞助商
+    const isFresns = appConfig.isFresns || false;
+
+    if (isFresns) {
       wx.request({
         url: 'https://cdn.fresns.cn/sponsor/sponsors.json',
         success: (res) => {
@@ -81,6 +85,7 @@ Page({
       fresnsConfig: await fresnsConfig(),
       stickyPosts: stickyPosts,
       channels: channels,
+      isFresns: isFresns,
     });
   },
 

@@ -16,7 +16,7 @@
         </block>
     </t-cell-group>
 
-    <block wx:if="{{ sponsor }}">
+    <block wx:if="{{ isFresns }}">
         <t-cell-group theme="card" style="margin-bottom:20px;">
             <t-cell title="赞助我们" leftIcon="money" url="/pages/webview?url=https://docs.fresns.cn/community/sponsor.html" hover arrow/>
         </t-cell-group>
