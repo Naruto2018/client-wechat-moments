@@ -32,7 +32,7 @@
 - 6、安装配套插件「[微信登录](https://marketplace.fresns.cn/open-source/detail/WeChatLogin)」，配置小程序密钥信息；
 - 7、使用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)上传代码，提交到微信公众平台。
 
-> 所有频道栏目的命名是读取后台配置，请自行在 Fresns 后台配置，代码中没有写死的名称。
+> 所有频道栏目的命名是读取后台配置，请自行在 Fresns 后台配置。
 
 ## 小程序隐私保护指引
 
