@@ -12,7 +12,7 @@ import { base64_encode } from '../libs/base64/base64';
 
 export class GlobalInfo {
   clientName = 'Moments';
-  clientVersion = appConfig.clientVersion || '1.4.2';
+  clientVersion = appConfig.clientVersion || '1.5.0';
   theme = null;
 
   // 处理用户主页路径
