@@ -22,7 +22,6 @@ Page({
     navbarTitle: null,
     title: null,
     logo: null,
-    showPrivacy: false,
     // 位置
     mapId: 5,
     latitude: null,
@@ -136,23 +135,6 @@ Page({
 
   // 选择位置
   onClickSelectLocation: function () {
-    // 判断隐私授权
-    if (wx.canIUse('getPrivacySetting')) {
-      wx.getPrivacySetting({
-        success: (res) => {
-          if (res.needAuthorization) {
-            // 需要弹出隐私协议
-            this.setData({
-              showPrivacy: true,
-            });
-          }
-        },
-        fail() {
-          return;
-        },
-      });
-    }
-
     const { latitude, longitude } = this.data;
 
     wx.chooseLocation({
